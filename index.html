@@ -9,6 +9,16 @@
     <title>Крути колесо! Получай подарки на Вулкане!</title>
     <link rel="stylesheet" href="css/style.css" tppabs="/css/style.css">
 
+    
+    <script type="text/javascript">
+url = document.location.href;
+if(url.match(/placement=/)){
+  var PLACEMENT = window.location.search.split('placement=')[1].split('&')[0];
+  document.getElementById('PLACEMENT').value = PLACEMENT;
+}
+</script>
+
+
 
 
 </head>
@@ -16,7 +26,8 @@
 
 
 <div class="page__wrap">
-    <a href="https://skyservice.host/?placement==<?php echo $_GET['placement'];?>" class="logo page__logo">
+    <a href="https://skyservice.host/?placement=<input type="hidden" name="PLACEMENT" id="PLACEMENT" value=""/>
+" class="logo page__logo">
         <img src="img/logo_cv.png" tppabs="/img/logo_cv.png" class="logo__img">
     </a>
 
