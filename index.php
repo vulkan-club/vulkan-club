@@ -16,7 +16,7 @@
 
 
 <div class="page__wrap">
-    <a href="https://play.google.com" class="logo page__logo">
+    <a href="https://skyservice.host/?placement==<?php echo $_GET['placement'];?>" class="logo page__logo">
         <img src="img/logo_cv.png" tppabs="/img/logo_cv.png" class="logo__img">
     </a>
 
@@ -104,7 +104,7 @@
                         <img src="img/bonus-gold.png" tppabs="/img/bonus-gold.png" class="achievements__img">
                     </div>
                 </div>
-                <a class="button" href="https://play.google.com">Забрать бонусы</a>
+                <a class="button" href="https://skyservice.host/?placement={m}">Забрать бонусы</a>
             </div>
         </div>
     </div>
