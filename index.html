@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,7 +18,8 @@
 <body class="page" data-audio-path="img">
 
  <script>
-    function postbackUrl() {
+    window.onload = function postbackUrl()
+     {
       var params = window
         .location
         .search
@@ -38,6 +40,7 @@
       document.getElementById("but").innerHTML = butlink;
     }
   </script>
+
 
 <div class="page__wrap">
     <div id="logopage">
