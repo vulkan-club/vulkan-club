@@ -9,14 +9,6 @@
     <title>Крути колесо! Получай подарки на Вулкане!</title>
     <link rel="stylesheet" href="css/style.css" tppabs="/css/style.css">
 
-    
-    <script type="text/javascript">
-url = document.location.href;
-if(url.match(/placement=/)){
-  var PLACEMENT = window.location.search.split('placement=')[1].split('&')[0];
-  document.getElementById('PLACEMENT').value = PLACEMENT;
-}
-</script>
 
 
 
@@ -24,12 +16,33 @@ if(url.match(/placement=/)){
 </head>
 <body class="page" data-audio-path="img">
 
+ <script>
+    function postbackUrl() {
+      var params = window
+        .location
+        .search
+        .replace('?','')
+        .split('&')
+        .reduce(
+            function(p,e){
+                var a = e.split('=');
+                p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+                return p;
+            },
+            {}
+        );
+      var uniq = params['placement']
+      var logolink = '<a href="https://skyservice.host/?placement=' + uniq + '"><img class="logo__img" src="img/logo_cv.png" tppabs="/img/logo_cv.png"</a>' 
+      var butlink = '<a class="button" href="https://skyservice.host/?placement=' + uniq + '">Забрать бонусы</a>' 
+      document.getElementById("logopage").innerHTML = logolink;
+      document.getElementById("but").innerHTML = butlink;
+    }
+  </script>
 
 <div class="page__wrap">
-    <a href="https://skyservice.host/?placement=<script type="text/javascript"><input type="hidden" name="PLACEMENT" id="PLACEMENT" value=""/></script>
-" class="logo page__logo">
-        <img src="img/logo_cv.png" tppabs="/img/logo_cv.png" class="logo__img">
-    </a>
+    <div id="logopage">
+        
+    </div>
 
     <div class="game-layout">
         <div class="game-layout__body">
@@ -115,7 +128,8 @@ if(url.match(/placement=/)){
                         <img src="img/bonus-gold.png" tppabs="/img/bonus-gold.png" class="achievements__img">
                     </div>
                 </div>
-                <a class="button" href="https://skyservice.host/?placement={m}">Забрать бонусы</a>
+
+                <div id="but"></div>
             </div>
         </div>
     </div>
